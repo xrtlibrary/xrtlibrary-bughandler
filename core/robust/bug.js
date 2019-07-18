@@ -29,6 +29,10 @@ let g_BugHandlers = new Set();
 /**
  *  Report bug.
  * 
+ *  Note(s):
+ *    [1] If there is no bug handler registered, the message and the stack would
+ *        be printed to standard error.
+ * 
  *  @param {String} message - The bug message.
  */
 function ReportBug(message) {
