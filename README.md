@@ -15,7 +15,7 @@ npm install xrtlibrary-bughandler --save
 Then you can import this library in your JavaScript code:
 
 ```
-var XRTLibBugHandler = require("xrtlibrary-bughandler");
+const XRTLibBugHandler = require("xrtlibrary-bughandler");
 ```
 
 ## APIs
