@@ -1,0 +1,8 @@
+{
+  "name": "xrtlibrary-bughandler",
+  "version": "0.8.3",
+  "description": "Bug handler module of XRT library.",
+  "main": "library/api.js",
+  "author": "The XRT Authors.",
+  "license": "BSD-3-Clause"
+}
