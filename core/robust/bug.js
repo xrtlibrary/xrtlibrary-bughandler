@@ -34,14 +34,21 @@ let g_BugHandlers = new Set();
  *        be printed to standard error.
  * 
  *  @param {String} message - The bug message.
+ *  @param {Boolean} [thrown] - True if the error should be thrown 
+ *                              (default: false).
+ *  @param {{new(message: String): Error}} [ecls] - The error class 
+ *                                                  (default: Error).
  */
-function ReportBug(message) {
+function ReportBug(message, thrown=false, ecls=Error) {
     if (g_BugHandlers.size == 0) {
         console.trace(Util.format("Unhandled bug: \"%s\".", message));
     } else {
         g_BugHandlers.forEach(function(cb) {
             cb(new Error(message));
         });
+    }
+    if (thrown) {
+        throw new ecls(message);
     }
 }
 
