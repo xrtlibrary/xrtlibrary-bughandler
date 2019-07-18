@@ -4,6 +4,16 @@
 //  found in the LICENSE.txt file.
 //
 
+//
+//  Imports.
+//
+
+//  Imported modules.
+const CrRobustBug = require("./../core/robust/bug");
+
 //  Export public APIs.
 module.exports = {
+    "ReportBug": CrRobustBug.ReportBug,
+    "RegisterBugHandler": CrRobustBug.RegisterBugHandler,
+    "UnregisterBugHandler": CrRobustBug.UnregisterBugHandler
 };
