@@ -44,7 +44,15 @@ function ReportBug(message, thrown=false, ecls=Error) {
         console.trace(Util.format("Unhandled bug: \"%s\".", message));
     } else {
         g_BugHandlers.forEach(function(cb) {
-            cb(new Error(message));
+            try {
+                cb(new Error(message));
+            } catch(error) {
+                console.trace(Util.format(
+                    "An error occurred while invoking bug handler " + 
+                    "(error=\"%s\").", 
+                    error.message || "Unknown error."
+                ));
+            }
         });
     }
     if (thrown) {
