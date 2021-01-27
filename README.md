@@ -30,7 +30,7 @@ Report bug.
 <u>Parameter(s)</u>:
  - message (*String*): The bug message.
  - thrown (*Boolean*): (Optional) True if the error should be thrown (default: false).
- - ecls (*{new(message: String): Error}*): (Optional) The error class (default: Error).
+ - ecls (*{new(message: String) =&gt; Error}*): (Optional) The error class (default: Error).
 
 ### RegisterBugHandler(handler)
 
